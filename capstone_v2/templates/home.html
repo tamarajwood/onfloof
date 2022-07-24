@@ -2,26 +2,29 @@
 
 {% block content %}
 
-<h2>6 Most Recent Posts</h2>
-<h3>Topics</h3>
+<div class="blog-header">
+    <h2>10 Most Recent Posts</h2>
 
-<div class="subject-nav">
-    <div>
-        <a href="{% url 'home' %}">Hiking</a>
-    </div>
-    <div>
-        <a href="{% url 'home' %}">Cycling</a>
-    </div>
-    <div>
-        <a href="{% url 'home' %}">Mushing</a>
+    <div class="subject-nav">
+        <div>
+            <a href="{% url 'home' %}">Hiking</a>
+        </div>
+        <div>
+            <a href="{% url 'home' %}">Cycling</a>
+        </div>
+        <div>
+            <a href="{% url 'home' %}">Mushing</a>
+        </div>
     </div>
 </div>
 
-<div v-for="post in postsList" :key="post.id" class="post-preview">
-    <a href="{% url 'home' %}">
-        <h3>[[ post.title ]]</h3>
-        <em>Created: [[ post.created ]]</em>
-    </a>
+<div class="main-container">
+    <div v-for="post in postsList" :key="post.id" class="post-preview">
+        <a href="{% url 'home' %}">
+            <h3>[[ post.title ]]</h3>
+            <em>Created: [[ post.created ]]</em>
+        </a>
+    </div>
 </div>
     
 {% endblock content %}

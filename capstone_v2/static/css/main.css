@@ -10,10 +10,12 @@ body {
     flex-flow: column nowrap;
     padding: 0em;
     margin: 0em;
-    line-height: 1.5em;
-    font-family: 'Outfit', sans-serif;
-    background-color: aliceblue;
-    text-align: center;
+    font-size: 1.5em;
+    line-height: 1.25em;
+    font-family: 'Inter', sans-serif;
+    /* background-color: rgba(45, 37, 39, 0.799) ; */
+    background-color: rgb(244, 241, 240);
+    color: rgb(39, 39, 40);
 }
 
 header {
@@ -23,7 +25,7 @@ header {
 }
 
 footer {
-    background-color: #e93354;
+    background-color:#e93354;
     padding: 2em;
     margin: 0em;
 }
@@ -33,17 +35,24 @@ footer h3 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Fredoka', sans-serif;
+    text-align: center;
 }
 
-h3 {
-    font-size: 1.5em;
+h1, h2 {
+    font-family: 'Fredoka One', cursive;
+}
+
+h1 a{
+    font-size: 1.75em;
+    text-decoration: none;
 }
 
 .nav {
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
+    background-color: rgba(216, 223, 227, 0.51);
+    padding: 1em;
 }
 
 .nav div {
@@ -56,14 +65,37 @@ h3 {
 
 .nav a {
     color: #e93354;
+    font-size: 1.5em;
+    text-decoration-color: white;
 }
 
 .nav a:hover {
     color: #3B9ABF;
 }
 
+.header-main-container {
+    width: 100%;
+}
+
+.blog-header {
+    width: 100%;
+    background-color:#e93354;
+    margin: 0em;
+    padding: 1em;
+}
+
+.subject-nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+.subject-nav a {
+    width: 30%;
+}
+
 .post-preview {
-    background-color: #e93354;
+    background-color: rgba(216, 223, 227, 0.51);
     padding: 1em;
     margin: 1em 0em;
 }
@@ -74,9 +106,6 @@ h3 {
         flex-flow: row nowrap;
     }
 
-    /* .subject {
-        display: contents;
-    } */
 }
 
 @media (min-width: 1100px) {
@@ -96,6 +125,7 @@ h3 {
     }
 
     .main-container {
-        width: 65%
+        width: 100%;
+        padding: 1em 2em 0em 1em;
     }
 }
