@@ -8,40 +8,94 @@ html {
 body {
     display: flex;
     flex-flow: column nowrap;
-    padding: 1em;
+    padding: 0em;
     margin: 0em;
-    line-height: 1.25em;
+    line-height: 1.5em;
+    font-family: 'Outfit', sans-serif;
     background-color: aliceblue;
     text-align: center;
 }
 
-header, nav {
+header {
     display: flex;
     flex-flow: column nowrap;
+    padding: 2em;
 }
 
-.subject-nav {
+footer {
+    background-color: #e93354;
+    padding: 2em;
+    margin: 0em;
+}
+
+footer h3 {
+    color: aliceblue;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka', sans-serif;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+.nav {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+}
+
+.nav div {
+    padding: 1em;
+}
+
+/* .subject {
     display: none;
+} */
+
+.nav a {
+    color: #e93354;
+}
+
+.nav a:hover {
+    color: #3B9ABF;
+}
+
+.post-preview {
+    background-color: #e93354;
+    padding: 1em;
+    margin: 1em 0em;
 }
 
 @media (min-width: 700px) {
 
-    nav {
+    .nav {
         flex-flow: row nowrap;
     }
 
-    .subject-nav {
-        display: flex;
-        flex-flow: row nowrap;
-    }
+    /* .subject {
+        display: contents;
+    } */
 }
 
 @media (min-width: 1100px) {
     
-    nav {
-        flex-flow: column nowrap;
+    main {
+        display: flex;
+        flex-flow: row nowrap;
     }
-    .subject-nav {
+
+    header {
+        width: 100%
+    }
+
+    .nav {
         flex-flow: column nowrap;
+        width: 25%;
+    }
+
+    .main-container {
+        width: 65%
     }
 }
