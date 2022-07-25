@@ -15,10 +15,7 @@
 </head>
     <body>
         <header>
-            <h1><a href="{% url 'home' %}">On Floof</a></h1>
-        </header>
-
-        <main>
+            <h1 class="title"><a href="{% url 'home' %}">On <br>Floof</a></h1>
             <div class="nav">
                 <div>
                     <a href="{% url 'home' %}">Blog</a>
@@ -33,11 +30,15 @@
                     <a href="{% url 'home' %}">Contact</a> 
                 </div>   
             </div>
+        </header>
+
+        <main>
             
             <div class="header-main-container" id="app">
                 {% block content %} 
                 {% endblock content %}
             </div>
+
         </main>
         <footer>
             <h3>On Floof &copy;</h3>

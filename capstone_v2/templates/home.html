@@ -2,28 +2,36 @@
 
 {% block content %}
 
-<div class="blog-header">
-    <h2>10 Most Recent Posts</h2>
-
-    <div class="subject-nav">
-        <div>
-            <a href="{% url 'home' %}">Hiking</a>
-        </div>
-        <div>
-            <a href="{% url 'home' %}">Cycling</a>
-        </div>
-        <div>
-            <a href="{% url 'home' %}">Mushing</a>
+<div class="home-container">
+    <div class="main-image">
+        <img src="../static/images/main-wide.jpg/" alt="Two huskies hiking in the Rocky mountains in Colorado">
+        <div class="image-message">
+            <h2>Anything you can do,<br>they can too.</h2>
+            <div class="subject-nav">
+                <div>
+                    <a href="{% url 'home' %}">Hiking</a>
+                </div>
+                <div>
+                    <a href="{% url 'home' %}">Cycling</a>
+                </div>
+                <div>
+                    <a href="{% url 'home' %}">Mushing</a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="main-container">
-    <div v-for="post in postsList" :key="post.id" class="post-preview">
-        <a href="{% url 'home' %}">
-            <h3>[[ post.title ]]</h3>
-            <em>Created: [[ post.created ]]</em>
-        </a>
+    <div class="main-container">
+        <div class="blog-header">
+            <h2>Recent Posts</h2>
+        </div>
+        <div v-for="post in postsList" :key="post.id" class="post-preview">
+            <a href="{% url 'home' %}">
+                <img :src="[[ post.previewImage ]]" alt="preview image for a blog post">
+                <h3>[[ post.title ]]</h3>
+                <em>Created: [[ post.created ]]</em>
+            </a>
+        </div>
     </div>
 </div>
     
