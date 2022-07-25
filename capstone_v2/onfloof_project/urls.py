@@ -22,5 +22,6 @@ urlpatterns = [
     path('users/', include('django.contrib.auth.urls')),
     path('api/v1/', include('api.urls')),
     path('api-auth/', include('rest_framework.urls')),
-    path('', TemplateView.as_view(template_name='home.html'), name='home')
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    # path('adopt/', TemplateView.as_view(template_name='adopt.html', name='adopt'))
 ]
