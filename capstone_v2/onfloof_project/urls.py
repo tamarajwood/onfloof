@@ -20,8 +20,15 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('django.contrib.auth.urls')),
+    path('adopt/', TemplateView.as_view(template_name='adopt.html'), name='adopt'),
+    path('adopt/<int:pk>', TemplateView.as_view(template_name='dog-detail.html'), name='dog-detail'),
     path('api/v1/', include('api.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
-    # path('adopt/', TemplateView.as_view(template_name='adopt.html', name='adopt'))
+    path('<int:pk>', TemplateView.as_view(template_name='post.html'), name='post'),
+    path('bike/', TemplateView.as_view(template_name='bike.html'), name='bike'),
+    path('hike/', TemplateView.as_view(template_name='hike.html'), name='hike'),
+    path('mushing/', TemplateView.as_view(template_name='mush.html'), name='mush'),
+    path('about/', TemplateView.as_view(template_name='about.html'), name='about'),
+    path('contact/', TemplateView.as_view(template_name='contact.html'), name='contact'),
 ]

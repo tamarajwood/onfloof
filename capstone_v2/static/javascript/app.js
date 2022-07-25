@@ -4,6 +4,9 @@ const vm = new Vue({
     data: {
         csrfToken: "",
         postsList: [],
+        hikeList: [],
+        bikeList: [],
+        mushList: [],
     },
     methods: {
         loadPosts: function() {

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="home-container" id="app">
+    <div class="main-image">
+        <img src="../static/images/main-wide.jpg/" alt="Two huskies hiking in the Rocky mountains in Colorado">
+        <div class="image-message">
+            <h2>About</h2>
+            <!-- <div class="subject-nav">
+                <div>
+                    <a href="{% url 'home' %}">Hiking</a>
+                </div>
+                <div>
+                    <a href="{% url 'home' %}">Cycling</a>
+                </div>
+                <div>
+                    <a href="{% url 'home' %}">Mushing</a>
+                </div>
+            </div> -->
+            <!-- may want to do another nav somewhere to get back to homepage incase they cant figure out the header -->
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="blog-header">
+            <h2>Meet the Pack!</h2>
+        </div>
+        <!-- <a href="{% url 'home' %}" v-for="post in postsList" :key="post.id" class="post-preview">
+            <img :src="[[ post.previewImage ]]" alt="preview image for a blog post">
+            <div class="preview-text-container">
+                <h3>[[ post.title ]]</h3>
+                <p><em>Created: [[ post.created ]]</em></p>
+                <p class="preview-text">[[ post.previewText ]]...</p>
+            </div>
+        </a> -->
+
+        <!-- can possibly use the above classes for easily creating buttons to introduce all the dogs and then change it later if you have time -->
+        <!-- will want a large picture of yourself at the top with a written descript of who you are, your experience and what the website is about -->
+        <!-- could potentially share a similiar (or the same!) format as the adopt page -->
+    </div>
+</div>
+    
+{% endblock content %}

@@ -1,19 +1,103 @@
-{% extends 'base.html' %}
+{% extends 'base-adopt.html' %}
 
 {% block content %}
 
-<div class="home-container">
-    <div class="main-image">
+<link rel="stylesheet" href="../static/css/adopt.css">
+
+<div class="adopt-header">
+    <div class="header-img-container">
         <img src="../static/images/main-wide.jpg/" alt="Two huskies hiking in the Rocky mountains in Colorado">
+    </div>
+    <div class="adopt-header-text">
+        <h2>Discover your adventure dog!</h2>
+        <p>Create written description here of what the adoption tool does and how to use it + why someone should use it</p>
+        <p>This header could go well next to a puppy picture of Jay</p>
+        <p>at the top of the page</p>
+        <p>OR have no pictures at all and just have the adoption tool it may be easier to use that way</p>
     </div>
 </div>
 
-    <div class="main-container">
-        <div class="blog-header">
-            <h2>Adopt an adventure dog!</h2>
+<div class="adopt-container">
+    <div class="search-container">
+        <h2>Dog Search</h2>
+        <div class="activity-container">
+            <label for="activity">Choose an activity:&nbsp;</label>
+
+            <select id="activity" v-model="activity">
+                <option value="hiking">Hiking</option>
+                <option value="running">Running</option>
+                <option value="hunting">Hunting</option>
+                <option value="skiing">Skiing</option>
+            </select>
         </div>
-        
+
+        <div id="breeds-list-container" v-if="activity !== ''">
+            <br><h2>Recommended Breeds</h2><br>
+            <div v-for="breeds in breedList">
+                <div v-for="sport in breeds.activites">
+
+                    <div v-if="sport === activity">
+                        <input type="radio" :value="breeds.breed" v-model="userBreed" :id="breeds.breed">
+                        <label :for="breeds.breed">[[ breeds.breed ]]</label>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            
+            <br><label for="location">Location:&nbsp;</label>
+            <input type='text' value='location' v-model="location" id='location' placeholder="city, state or zip" @keyup.enter="getNewDogData">
+            <br><br><button @click="getNewDogData">Search</button>
+        </div>
     </div>
+
+    <div id="dog-list" v-if="Object.keys(dogData).length">
+
+        <div class="button-container">
+            <div v-if="dogData.pagination.current_page !== 1" class="back-button">
+                <button @click="backPage">Back</button>
+            </div>
+            <div v-if="dogData.pagination.current_page !== dogData.pagination.total_pages" class="next-button">
+                <button @click="nextPage">Next</button>
+            </div>
+        </div>
+    
+        <!-- change border to be pink for girls and blue for boys by doing if-->
+    <div class="all-dog-cards-container">
+        <div v-for="dog in dogData.animals" :key="dog.id" class="dog-card-container">
+
+                <div v-if="dog.gender === 'Male'" class="dog-card-male">
+                    <div class='card-header'>
+                        <h3>[[ dog.name ]]</h3>
+                    </div>
+                    <div v-if="dog.photos.length" class="img-container">
+                        <img :src="dog.photos[0].large">
+                    </div>
+                </div>
+
+                <div v-else="dog.gender === 'Female'" class="dog-card-female">
+                    <div class='card-header'>
+                        <h3>[[ dog.name ]]</h3>
+                    </div>
+                    <div v-if="dog.photos.length" class="img-container">
+                        <img :src="dog.photos[0].large">
+                    </div>
+                </div>
+        </div>
+    </div> 
+
+        <div class="button-container-bottom">
+            <div v-if="dogData.pagination.current_page !== 1" class="back-button">
+                <button @click="backPage">Back</button>
+            </div>
+            <div v-if="dogData.pagination.current_page !== dogData.pagination.total_pages" class="next-button">
+                <button @click="nextPage">Next</button>
+            </div>
+        </div>
+
+    </div>
+
 </div>
 
 {% endblock content %}
