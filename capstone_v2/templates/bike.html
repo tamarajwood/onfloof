@@ -25,14 +25,15 @@
         <div class="blog-header">
             <h2>Recent Cycling Posts</h2>
         </div>
-        <a href="{% url 'home' %}" v-for="post in postsList" :key="post.id" class="post-preview">
-            <img :src="[[ post.previewImage ]]" alt="preview image for a blog post">
-            <div class="preview-text-container">
-                <h3>[[ post.title ]]</h3>
-                <p><em>Created: [[ post.created ]]</em></p>
-                <p class="preview-text">[[ post.previewText ]]...</p>
-            </div>
-        </a>
+        <div v-for="post in bikeList">
+            <a href="{% url 'home' %}" class="post-preview">
+                <div class="preview-text-container">
+                    <h3>[[ post.title ]]</h3>
+                    <p><em>Created: [[ post.created ]]</em></p>
+                    <p class="preview-text">[[ post.previewText ]]...</p>
+                </div>
+            </a>
+        </div>
         
     </div>
 </div>

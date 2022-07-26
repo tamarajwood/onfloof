@@ -23,16 +23,16 @@
 
     <div class="main-container">
         <div class="blog-header">
-            <h2>Title Here</h2>
+            <h2>[[ postsList[0].title ]]</h2>
         </div>
         
-        <p>Put the bost.body here, I am not sure how formatting will work for this page</p>
-        <p>may need to brake blog posts down into section 1, 2, 3, and picture 1, 2, 3 in order to format them</p>
-        <p>Automatically</p>
-
-        <p>Will also want to create a side bar eventually with links to more posts perhaps in the same category this wouldn't be to hard to do</p>
+        <p>[[ postsList[0].body ]]
         
     </div>
 </div>
     
 {% endblock content %}
+
+
+<!-- BLOCKER -- getting this to show the body and title 
+may also want the url to be the title instead of the pk -->

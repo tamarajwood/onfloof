@@ -6,6 +6,7 @@ class Post(models.Model):
     body = models.TextField()
     previewText = models.CharField(max_length=120)
     previewImage = models.CharField(max_length=100)
+    id = models.PositiveIntegerField(primary_key = True)
     ## preview image will store file locations like static/images/image_1.jpg
 
     def __str__(self):
@@ -17,6 +18,8 @@ class Post(models.Model):
 class Subject(models.Model):
     subject = models.CharField(max_length=50)
     post = models.ManyToManyField(Post, related_name='subjects')
+## a sub category model can be added later on such as 'food' 'gear' etc. for now subcategories that pertain to multiple subjects
+## such as food will be put into multiple subjects so seen on multiple pages
 
     def __str__(self):
         return self.subject

@@ -23,7 +23,7 @@ class PostSerializer(serializers.ModelSerializer):
     subject_detail = NestedSubjectSerializer(many=True, source='subjects', read_only=True)
     class Meta:
         model = Post
-        fields = ('title', 'subject_detail', 'created', 'previewImage', 'body', 'previewText')
+        fields = ('title', 'id', 'subject_detail', 'created', 'previewImage', 'body', 'previewText')
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:

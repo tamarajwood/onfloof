@@ -25,7 +25,7 @@ urlpatterns = [
     path('api/v1/', include('api.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
-    path('<int:pk>', TemplateView.as_view(template_name='post.html'), name='post'),
+    path('<int:pk>/', TemplateView.as_view(template_name='post.html'), name='post'),
     path('bike/', TemplateView.as_view(template_name='bike.html'), name='bike'),
     path('hike/', TemplateView.as_view(template_name='hike.html'), name='hike'),
     path('mushing/', TemplateView.as_view(template_name='mush.html'), name='mush'),
