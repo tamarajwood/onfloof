@@ -6,14 +6,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adventure Dog Finder, Adoption Tool</title>
+    <title>Dog Adventure Blog</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/main-white.css">
 </head>
     <body>
+        {% csrf_token %}
         <header>
             <h1 class="title"><a href="{% url 'home' %}">On <br>Floof</a></h1>
             <div class="nav">
@@ -34,19 +35,15 @@
 
         <main>
             
-            <!-- <div class="header-main-container" id="adopt"> -->
-            <div>
-                {% block content %} 
-                {% endblock content %}
-            </div>
-
+            {% block content %} 
+            {% endblock content %}
+    
         </main>
         <footer>
             <h3>On Floof &copy;</h3>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
-        <script src="/../static/javascript/adopt.js/"></script>
+        <script src="{% static 'javascript/app.js' %}"></script>
     </body>
 </html>

@@ -27,6 +27,7 @@
         </div>
         <div v-for="post in postsList" :key="post.id">
             <a :href="`/${post.id}/`" class="post-preview">
+                <!-- @click="postDetail = 'post'" -->
                 <img :src="[[ post.previewImage ]]" alt="preview image for a blog post">
                 <div class="preview-text-container">
                     <h3>[[ post.title ]]</h3>

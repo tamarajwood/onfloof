@@ -1,10 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'base-dog-detail.html' %}
 
 {% block content %}
 
-<div class="home-container" id="app">
+<div class="home-container" id="dogDetail">
     <div class="main-image">
-        <img src="../static/images/main-wide.jpg/" alt="Two huskies hiking in the Rocky mountains in Colorado">
+        <img :src="dogData.animal.photos[0].full" alt="Two huskies hiking in the Rocky mountains in Colorado">
         <div class="image-message">
             <h2>Doggie Name</h2>
             <!-- <div class="subject-nav">
@@ -23,8 +23,9 @@
 
     <div class="main-container">
         <div class="blog-header">
-            <h2>Doggie name here</h2>
+            <h2>[[ dogData.animal.name ]]</h2>
         </div>
+        <p>[[ dogData.animal ]]</p>
         <!-- <a href="{% url 'home' %}" v-for="post in postsList" :key="post.id" class="post-preview">
             <img :src="[[ post.previewImage ]]" alt="preview image for a blog post">
             <div class="preview-text-container">
@@ -40,5 +41,5 @@
         
     </div>
 </div>
-    
+
 {% endblock content %}

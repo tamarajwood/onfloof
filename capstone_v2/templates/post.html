@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base-white.html' %}
 
 {% block content %}
 
@@ -23,16 +23,15 @@
 
     <div class="main-container">
         <div class="blog-header">
-            <h2>[[ postsList[0].title ]]</h2>
+            <h2>[[ currentPost.title ]]</h2>
         </div>
-        
-        <p>[[ postsList[0].body ]]
+
+        <div class="post-body">
+            <p class="created">Written: <em>[[ currentPost.created ]]</em></p>
+            <p>[[ currentPost.body ]]</p>
+        </div>
         
     </div>
 </div>
     
 {% endblock content %}
-
-
-<!-- BLOCKER -- getting this to show the body and title 
-may also want the url to be the title instead of the pk -->

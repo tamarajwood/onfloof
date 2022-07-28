@@ -1,0 +1,348 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 0em;
+    margin: 0em;
+    font-size: 1.25em;
+    line-height: 1.25em;
+    font-family: 'Inter', sans-serif;
+    color: #212120;
+    background-color: rgb(244, 241, 240);
+    /* background-color: rgba(45, 37, 39, 0.799) ; */
+}
+
+header {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 1em;
+    width: 100%;
+    background-color: rgb(244, 241, 240);
+}
+
+.main {
+    padding: 0em;
+    margin: 0em;
+}
+
+/* .main-image {
+    display: none;
+} */
+
+.main-image {
+    display: flex;
+    height: auto;
+    width: 100vw;
+    max-width: 100%;
+    padding: 0em;
+    color:#2e2f31;
+}
+
+.main-image img {
+    object-fit: scale-down;
+    overflow: hidden;
+}
+
+.image-message h2 {
+    display: none;
+}
+
+.subject-nav {
+    display: none;
+}
+
+
+footer {
+    background-color: rgb(244, 241, 240);
+    padding: 2em;
+    margin: 0em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Fredoka One', cursive;
+}
+
+h1 a{
+    font-size: 1.55em;
+    line-height: .5em;
+    text-decoration: none;
+    color: #2a8c7ad1;
+    text-shadow: -.035em 0 #212120, 0 .035em #212120, .035em 0 #212120, 0 -.035em #212120;
+}
+
+.main-container h2 {
+    color:#51b7a4d1;
+}
+
+footer h3 {
+    color:#2a8c7ad1;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5em;
+}
+
+.nav {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    padding: 1em;
+}
+
+.nav div {
+    padding: 1em;
+}
+
+.nav a {
+    color: rgb(54, 57, 58);
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: rgb(250, 250, 250) .105em;
+    transition: all ease-in-out 500ms;
+}
+/* this is NOT WORKING, WHY??? */
+
+.home-container {
+    background-color: rgb(240, 239, 221);
+    width: 100%;
+    margin: 0em;
+}
+
+.blog-header {
+    width: 100%;
+    padding: 1em;
+}
+
+.created {
+    text-align: end;
+    font-size: .75em;
+    color: #30302e;
+}
+
+.main-container {
+    background-color: rgba(216, 223, 227, 0.51);
+}
+
+.post-body {
+    margin: 0em;
+    white-space: pre-line;
+    padding: 1em;
+}
+/* .subject-nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+.subject-nav a {
+    width: 30%;
+} */
+
+/* .post-preview {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #2d2d2b;
+    padding: 1em;
+    margin: 1em 0em;
+    width: 100%;
+    height:fit-content;
+    color: rgb(240, 239, 221);
+    text-decoration: none;
+} */
+
+/* .post-preview img {
+    object-fit: scale-down;
+    max-width: 100%;
+}
+
+.preview-text-container {
+    display: flex;
+    flex-flow: column nowrap;
+} */
+
+/* .preview-text {
+    display: none;
+} */
+
+@media (min-width: 700px) {
+
+    header {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        padding: 0em;
+        height: 2em;
+        z-index: 1;
+    }
+
+    .title {
+        width: fit-content;
+        padding: .5em 0em .5em 1.65em;
+        margin: 0em;
+        /* font-size: 1.15em; */
+        font-size: .75em;
+        line-height: .65em;
+    }
+
+    /* .main-image {
+        display: flex;
+        height: auto;
+        width: 100vw;
+        max-width: 100%;
+        padding: 0em;
+        color:#2e2f31;
+    }
+
+    .main-image img {
+        object-fit: scale-down;
+        overflow: hidden;
+    }
+
+    .image-message h2 {
+        display: none;
+    }
+
+    .subject-nav {
+        display: none;
+    } */
+
+    .nav {
+        flex-flow: row nowrap;
+        width: fit-content;
+        padding: 0em 1em 0em 0em;
+    }
+
+    .nav div {
+        padding: .37em .25em .5em .25em;
+        margin: 0em;
+    }
+
+    .nav a {
+        font-size: 1em;
+    }
+
+    /* .header-main-container {
+        margin: 2em 0em 0em 0em;
+    } */
+
+    .home-container {
+        margin: 2em 0em 0em 0em;
+    }
+
+    .main-container {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .post-body {
+        padding: 2em;
+    }
+
+    .blog-header {
+        padding: 1em;
+        margin-top: -3em;
+        width: 50%;
+        height: fit-content;
+        align-self: center;
+        background-color: rgb(244, 241, 240);
+    }
+
+    /* .post-preview {
+        display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+    }
+
+    .post-preview img {
+        width: 33.33%;
+    }
+
+    .preview-text-container {
+        width: 66.66%;
+        padding: 0em 0em 0em 1em;
+    }
+
+    .preview-text {
+        display: contents;
+    } */
+
+}
+
+@media (min-width: 900px) {
+    .post-body {
+        padding: 2em 3em 3em 3em;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    /* .image-message {
+        position: absolute;
+        top: 3.5em;
+        left: 3.5em;
+    }
+
+    .image-message h2 {
+        display: contents;
+    }
+
+   .subject-nav {
+        display: flex;
+        flex-flow: row nowrap;
+        margin-top: .5em;
+        justify-content:space-between;
+   }
+
+   .subject-nav div {
+    padding: .25em;
+    border-radius: .5em;
+    border: solid rgba(223, 159, 81, 0.818) .105em;
+    background-color: rgba(223, 159, 81, 0.581);
+   }
+
+   .subject-nav div:hover {
+    border: solid rgba(245, 233, 218, 0.818) .105em;
+    background-color: rgba(223, 178, 124, 0.581);
+    transition: all ease-in-out 500ms;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+   }
+
+   .subject-nav div a {
+    color:#212120;
+    text-decoration: none;
+   } */
+
+   .blog-header {
+        align-self: auto;
+        margin-left: 15%;
+   }
+
+   .main-container {
+        margin: 0em auto 0em auto;
+        width: 70%;
+   }
+
+}
+
+/* DROP DOWN FOR MOBILE VIEW AND FOR BLOG WHEN IN FULL SCREENVIEW
+https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp */
+/* WOULD BE COOL TO DO TRANSPARENT NAV THAT BECOMES NOT TRANSPARENT 
+WHEN YOU SCROLL DOWN FAR ENOUGH in WEB view */
+/* NEED TO MAKE IMAGE SMALLER ON POST DETAIL PAGE BECAUSE IT LOOKS WONKEY ON FULL SCREEN */
+/* colors on full screen post 
+    - I am not sure I like the 3 different colors for backgrounds it will be better with 2
+    - but need to find the right color to change the post-body or perhaps it is main container to 
+    - because right now it is somewhat transparent so it changes to an ugly color when I cange the home-container background color */

@@ -2,7 +2,8 @@ from rest_framework import generics, viewsets, permissions
 from django.contrib.auth import get_user_model
 
 from posts.models import Post, Subject
-from .serializers import PostSerializer, SubjectSerializer, UserSerializer 
+from adoption.models import Breed, Activity
+from .serializers import BreedSerializer, ActivitySerializer, PostSerializer, SubjectSerializer, UserSerializer 
 from .permissions import IsAdminUserOrReadOnly, AdminReadOnly
 
 class PostViewSet(viewsets.ModelViewSet):
@@ -13,6 +14,16 @@ class PostViewSet(viewsets.ModelViewSet):
 class SubjectViewSet(viewsets.ModelViewSet):
     queryset = Subject.objects.all()
     serializer_class = SubjectSerializer
+    permission_classes = [IsAdminUserOrReadOnly]
+
+class BreedViewSet(viewsets.ModelViewSet):
+    queryset = Breed.objects.all()
+    serializer_class = BreedSerializer
+    permission_classes = [IsAdminUserOrReadOnly]
+
+class ActivityViewSet(viewsets.ModelViewSet):
+    queryset = Activity.objects.all()
+    serializer_class = ActivitySerializer
     permission_classes = [IsAdminUserOrReadOnly]
 
 # ## User viewset not really needed
