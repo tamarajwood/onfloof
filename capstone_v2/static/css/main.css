@@ -20,7 +20,7 @@ body {
 header {
     display: flex;
     flex-flow: column nowrap;
-    padding: 1em;
+    padding: 0em;
     width: 100%;
     background-color: #212120;
 }
@@ -66,28 +66,36 @@ footer h3 {
     font-size: 1.5em;
 }
 
+summary {
+    background-color: white;
+    padding: .5em;
+}
+
+summary::marker {
+    color:#51b7a4d1;
+    display: none;
+}
+
 .nav {
+    display: none;
+}
+
+.mobile-nav {
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
-    padding: 1em;
+    padding: 0em;
 }
 
-.nav div {
-    padding: 1em;
+.mobile-nav div {
+    padding: .65em 0em 0em 1em;
 }
 
-.nav a {
+.mobile-nav a {
     color: rgba(216, 223, 227, 0.51);
-    font-size: 1.5em;
+    font-size: 1.25em;
     text-decoration: none;
 }
-
-.nav div a:hover {
-    color: rgb(250, 250, 250) .105em;
-    transition: all ease-in-out 500ms;
-}
-/* this is NOT WORKING, WHY??? */
 
 .header-main-container {
     width: 100%;
@@ -103,16 +111,6 @@ footer h3 {
     width: 100%;
     margin: 0em;
     padding: 1em;
-}
-
-.subject-nav {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-}
-
-.subject-nav a {
-    width: 30%;
 }
 
 .post-preview {
@@ -142,6 +140,33 @@ footer h3 {
 }
 
 @media (min-width: 700px) {
+
+    .nav {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100%;
+        padding: 0em;
+    }
+    
+    .mobile-nav {
+        display: none;
+    }
+
+    .nav div {
+        padding: 1em;
+    }
+    
+    .nav a {
+        color: rgba(216, 223, 227, 0.51);
+        font-size: 1.5em;
+        text-decoration: none;
+    }
+    
+    .nav div a:hover {
+        color: rgb(250, 250, 250) .105em;
+        transition: all ease-in-out 500ms;
+    }
+    /* this is NOT WORKING, WHY??? */
 
     header {
         flex-flow: row nowrap;

@@ -1,8 +1,16 @@
+main {
+    margin-top: 2em;
+}
+
 .adopt-header {
     color:rgb(240, 239, 221);
     display: flex;
     flex-flow: column nowrap;
     max-width: 100vw;
+}
+
+.adopt-header-text {
+    padding: 1em;
 }
 
 /* .header-img-container {
@@ -120,6 +128,34 @@
     margin: 0em;
 }
 
+/* DOG DETAIL PAGE SPECIFIC */
+
+.detail-img-container {
+    margin: 0em auto 0em auto;
+    animation-delay: 1sec;
+    width: fit-content;
+    height: 80vh;
+    overflow: hidden;
+    animation: travel 20s ease-in-out infinite;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+@keyframes travel {
+    0%, 100% {
+       transform: translate3d(0,0,0);
+     }
+    50% {
+       transform: translate3d(-100%,0,0);
+     }
+  }
+
+.detail-img-container img {
+    object-fit: scale-down;
+    width: 100%;
+    margin: 0em 1em 0em 0em;
+}
+
 @media (min-width: 750px) {
 
     /* .header-img-container {
@@ -130,6 +166,10 @@
         padding: 0em;
         /* color:#2e2f31; */
     /* }  */
+
+    #adopt {
+        margin-top: 2em;
+    }
 
     .adopt-img {
         display: contents;

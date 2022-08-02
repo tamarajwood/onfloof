@@ -27,7 +27,7 @@
         </div>
 
         <div v-for="post in hikeList">
-            <a href="`/${post.id}/`" class="post-preview">
+            <a :href="`../${post.id}/`" class="post-preview">
                 <img :src="[[ post.previewImage ]]" alt="preview image for a blog post">
                 <div class="preview-text-container">
                     <h3>[[ post.title ]]</h3>

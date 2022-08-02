@@ -2,30 +2,107 @@
 
 {% block content %}
 
+
 <div class="home-container" id="dogDetail">
-    <div class="main-image">
-        <img :src="dogData.animal.photos[0].full" alt="Two huskies hiking in the Rocky mountains in Colorado">
-        <div class="image-message">
-            <h2>Doggie Name</h2>
-            <!-- <div class="subject-nav">
-                <div>
-                    <a href="{% url 'home' %}">Hiking</a>
-                </div>
-                <div>
-                    <a href="{% url 'home' %}">Cycling</a>
-                </div>
-                <div>
-                    <a href="{% url 'home' %}">Mushing</a>
-                </div>
-            </div> -->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <!-- <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol> -->
+    
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img :src="dogData.animal.photos[0].full">
+            </div>
+            <div class="item" v-for="image in dogData.animal.photos">
+                <img :src="image.full" alt="adoptable adventure dog">
+            </div>
         </div>
+
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"><</span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">></span>
+            <span class="sr-only">Next</span>
+        </a>
+    
+    <!-- <div class="detail-img-container">
+        <img v-for="image in dogData.animal.photos" :src="image.full" alt="Photo of adoptable dog"> -->
+            
+            <!-- <div class="slide-buttons">
+                <a :href="slideNum"></a>
+            </div>  -->
     </div>
 
     <div class="main-container">
         <div class="blog-header">
             <h2>[[ dogData.animal.name ]]</h2>
+            <p v-if="dogData.animal.breeds.primary != null">[[dogData.animal.breeds.primary]] 
+                <span v-if="dogData.animal.breeds.secondary != ''">and [[dogData.animal.breeds.secondary]] mix</span></p>
+            <p v-if="dogData.animal.contact.address.city != null">[[dogData.animal.contact.address.city]]<span v-if="dogData.animal.contact.address.state != null">, [[dogData.animal.contact.address.state]]</span>
+            </p>
+            <ul>
+                <li v-if="dogData.animal.age != null">[[dogData.animal.age]]</li>
+                <li v-if="dogData.animal.gender != null">[[dogData.animal.gender]]</li>
+                <li v-if="dogData.animal.size != null">[[dogData.animal.size]]</li>
+            </ul>
+            <p>Get more information at <a v-if="dogData.animal.url != null" :href="dogData.animal.url">Petfinder</a></p>
         </div>
-        <p>[[ dogData.animal ]]</p>
+
+        <div class="dog-main-container">
+
+            <div class="dog-info">
+
+                <div class="dog-info-header">
+                    <h3>More info</h3>
+                    <ul v-for="tag in dogData.animal.tags" div="tag-container">
+                        <li>[[ tag ]]</li>
+                    </ul>
+                </div>
+
+                <div class="dog-info-main">
+                    <div>
+                        <h4>Adoption Status</h4>
+                        <p>[[dogData.animal.status]]</p>
+                    </div>
+
+                    <div>
+                        <h4 v-if="dogData.animal.attributes.house_trained != null">House Trained</h4>
+                        <p v-if="dogData.animal.attributes.house_trained === true">Yes</p>
+                        <p v-if="dogData.animal.attributes.house_trained === false">No</p>
+                    </div>
+
+                    <div>
+                        <h4>Prefers a home without:</h4>
+                        <p v-if="dogData.animal.environment.children === false">Children</p>
+                        <p v-if="dogData.animal.environment.dogs === false">Dogs</p>
+                        <p v-if="dogData.animal.environment.cats === false">Cats</p>
+                    </div>
+
+                    <div>
+                        <h4>Health</h4>
+                        <ul>
+                        <li v-if="dogData.animal.attributes.declawed === true">Declawed</li>
+                        <li v-if="dogData.animal.attributes.shots_current === true">Shots current</li>
+                        <li v-if="dogData.animal.attributes.shots_current === false">Shots not current</li>
+                        <li v-if="dogData.animal.attributes.spayed_neutered === true">Spayed/Neutered</li>
+                        <li v-if="dogData.animal.attributes.shots_current === false">Not spayed/neutered</li>
+                        <li v-if="dogData.animal.attributes.special_needs === true">Special needs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shelter-info" v-if="dogData.animal.contact.email != null">
+                <div class="shelter-info-header"><h2>Contact</h2></div>
+                <div class="shelter-info-main"><p>[[dogData.animal.contact.email]]</p></div>
+            </div>
+        </div>
+
         <!-- <a href="{% url 'home' %}" v-for="post in postsList" :key="post.id" class="post-preview">
             <img :src="[[ post.previewImage ]]" alt="preview image for a blog post">
             <div class="preview-text-container">

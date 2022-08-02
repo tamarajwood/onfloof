@@ -17,6 +17,34 @@
         {% csrf_token %}
         <header>
             <h1 class="title"><a href="{% url 'home' %}">On <br>Floof</a></h1>
+            
+            <details class="mobile-nav">
+                <summary>Menu</summary>
+                <div>
+                    <a href="{% url 'home' %}">Blog</a>
+                </div>
+                <div class="subject-nav-mobile">
+                    <div>
+                        <a href="{% url 'hike' %}">Hiking</a>
+                    </div>
+                    <div>
+                        <a href="{% url 'bike' %}">Cycling</a>
+                    </div>
+                    <div>
+                        <a href="{% url 'mush' %}">Mushing</a>
+                    </div>
+                </div>
+                <div>
+                    <a href="{% url 'adopt' %}">Adopt</a>
+                </div>
+                <div>
+                    <a href="{% url 'about' %}">About</a>
+                </div>
+                <div>
+                    <a href="{% url 'contact' %}">Contact</a> 
+                </div>   
+            </details>
+
             <div class="nav">
                 <div>
                     <a href="{% url 'home' %}">Blog</a>
@@ -31,6 +59,7 @@
                     <a href="{% url 'contact' %}">Contact</a> 
                 </div>   
             </div>
+
         </header>
 
         <main>
