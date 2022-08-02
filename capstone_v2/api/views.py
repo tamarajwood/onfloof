@@ -1,14 +1,19 @@
 from rest_framework import generics, viewsets, permissions
 from django.contrib.auth import get_user_model
 
-from posts.models import Post, Subject
+from posts.models import Post, Subject, Comment
 from adoption.models import Breed, Activity
-from .serializers import BreedSerializer, ActivitySerializer, PostSerializer, SubjectSerializer, UserSerializer 
+from .serializers import BreedSerializer, ActivitySerializer, PostSerializer, SubjectSerializer, UserSerializer, CommentSerializer
 from .permissions import IsAdminUserOrReadOnly, AdminReadOnly
 
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    permission_classes = [IsAdminUserOrReadOnly]
+
+class CommentViewSet(viewsets.ModelViewSet):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
     permission_classes = [IsAdminUserOrReadOnly]
 
 class SubjectViewSet(viewsets.ModelViewSet):

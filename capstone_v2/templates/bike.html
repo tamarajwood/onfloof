@@ -12,10 +12,10 @@
                     <a href="{% url 'hike' %}">Hiking</a>
                 </div>
                 <div>
-                    <a href="{% url 'bike' %}">Cycling</a>
+                    <a href="{% url 'mush' %}">Mushing</a>
                 </div>
                 <div>
-                    <a href="{% url 'mush' %}">Mushing</a>
+                    <a href="{% url 'home' %}">All Posts</a>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
             <h2>Recent Cycling Posts</h2>
         </div>
         <div v-for="post in bikeList">
-            <a href="`/${post.id}/`" class="post-preview">
+            <a :href="`../${post.id}/`" class="post-preview">
                 <img :src="[[ post.previewImage ]]" alt="preview image for a blog post">
                 <div class="preview-text-container">
                     <h3>[[ post.title ]]</h3>

@@ -116,6 +116,8 @@ const dogFinder = new Vue ({
        },
 
        sortBreedsByActivity: function() {
+
+            activityBreeds = []
             for (let activity_object of this.breedList) {
                 if (activity_object.activity === this.activity) {
                     for (let breed of activity_object.breed_detail) {

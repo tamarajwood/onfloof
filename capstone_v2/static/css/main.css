@@ -5,6 +5,10 @@ html {
     box-sizing: inherit;
 }
 
+main {
+    margin-top: .75em;
+} 
+
 body {
     display: flex;
     flex-flow: column nowrap;
@@ -67,13 +71,19 @@ footer h3 {
 }
 
 summary {
-    background-color: white;
+    background-color: #212120;
     padding: .5em;
 }
 
 summary::marker {
     color:#51b7a4d1;
     display: none;
+}
+
+details {
+    color: rgba(216, 223, 227, 0.708);
+    font-size: 1.25em;
+    font-family: 'Inter', sans-serif;
 }
 
 .nav {
@@ -93,7 +103,7 @@ summary::marker {
 
 .mobile-nav a {
     color: rgba(216, 223, 227, 0.51);
-    font-size: 1.25em;
+    font-size: .75em;
     text-decoration: none;
 }
 

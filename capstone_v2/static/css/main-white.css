@@ -5,6 +5,10 @@ html {
     box-sizing: inherit;
 }
 
+main {
+    margin-top: .75em;
+}
+
 body {
     display: flex;
     flex-flow: column nowrap;
@@ -21,7 +25,7 @@ body {
 header {
     display: flex;
     flex-flow: column nowrap;
-    padding: 1em;
+    padding: 0em;
     width: 100%;
     background-color: rgb(244, 241, 240);
 }
@@ -90,31 +94,11 @@ footer h3 {
     font-size: 1.5em;
 }
 
-.nav {
-    display: flex;
-    flex-flow: column nowrap;
-    width: 100%;
-    padding: 1em;
-}
 
-.nav div {
-    padding: 1em;
-}
-
-.nav a {
-    color: rgb(54, 57, 58);
-    font-size: 1.5em;
-    text-decoration: none;
-}
-
-.nav a:hover {
-    color: rgb(250, 250, 250) .105em;
-    transition: all ease-in-out 500ms;
-}
 /* this is NOT WORKING, WHY??? */
 
 .home-container {
-    background-color: rgb(240, 239, 221);
+    background-color: rgb(244, 241, 240);
     width: 100%;
     margin: 0em;
 }
@@ -138,6 +122,43 @@ footer h3 {
     margin: 0em;
     white-space: pre-line;
     padding: 1em;
+}
+
+summary {
+    background-color: #212120;
+    padding: .5em;
+}
+
+summary::marker {
+    color:#51b7a4d1;
+    display: none;
+}
+
+details {
+    color: rgba(216, 223, 227, 0.708);
+    font-size: 1.25em;
+    font-family: 'Inter', sans-serif;
+}
+
+.nav {
+    display: none;
+}
+
+.mobile-nav {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    padding: 0em;
+}
+
+.mobile-nav div {
+    padding: .65em 0em 0em 1em;
+}
+
+.mobile-nav a {
+    color: rgb(54, 57, 58);;
+    font-size: .75em;
+    text-decoration: none;
 }
 /* .subject-nav {
     display: flex;
@@ -176,6 +197,32 @@ footer h3 {
 } */
 
 @media (min-width: 700px) {
+
+    .nav {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100%;
+        padding: 1em;
+    }
+    
+    .nav div {
+        padding: 1em;
+    }
+    
+    .nav a {
+        color: rgb(54, 57, 58);
+        font-size: 1.5em;
+        text-decoration: none;
+    }
+    
+    .nav a:hover {
+        color: rgb(250, 250, 250) .105em;
+        transition: all ease-in-out 500ms;
+    }
+
+    .mobile-nav {
+        display: none;
+    }
 
     header {
         flex-flow: row nowrap;
@@ -345,4 +392,4 @@ WHEN YOU SCROLL DOWN FAR ENOUGH in WEB view */
 /* colors on full screen post 
     - I am not sure I like the 3 different colors for backgrounds it will be better with 2
     - but need to find the right color to change the post-body or perhaps it is main container to 
-    - because right now it is somewhat transparent so it changes to an ugly color when I cange the home-container background color */
+    - because right now it is somewhat transparent so it changes to an ugly color when I cange the home-container background */

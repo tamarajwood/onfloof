@@ -26,6 +26,16 @@ class Subject(models.Model):
 
 ## if have time create many to many field comment class (not sure why comment class has to be many to many)
 
+class Comment(models.Model):
+    comment = models.CharField(max_length = 500)
+    post = models.ManyToManyField(Post, related_name='comments')
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created']
+
+    def __str__(self):
+        return self.comment
 
 ########### NOTES ##############
 

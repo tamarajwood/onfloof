@@ -39,17 +39,19 @@
     </div>
 
     <div class="main-container">
-        <div class="blog-header">
+        <div class="blog-header-dog">
             <h2>[[ dogData.animal.name ]]</h2>
             <p v-if="dogData.animal.breeds.primary != null">[[dogData.animal.breeds.primary]] 
-                <span v-if="dogData.animal.breeds.secondary != ''">and [[dogData.animal.breeds.secondary]] mix</span></p>
+                <span v-if="dogData.animal.breeds.secondary != null">and [[dogData.animal.breeds.secondary]] mix</span></p>
             <p v-if="dogData.animal.contact.address.city != null">[[dogData.animal.contact.address.city]]<span v-if="dogData.animal.contact.address.state != null">, [[dogData.animal.contact.address.state]]</span>
             </p>
-            <ul>
-                <li v-if="dogData.animal.age != null">[[dogData.animal.age]]</li>
-                <li v-if="dogData.animal.gender != null">[[dogData.animal.gender]]</li>
-                <li v-if="dogData.animal.size != null">[[dogData.animal.size]]</li>
-            </ul>
+
+            <div class="dog-tags">
+            <span v-if="dogData.animal.age != null">[[dogData.animal.age]]</span>
+            <span v-if="dogData.animal.gender != null">• [[dogData.animal.gender]]</span>
+            <span v-if="dogData.animal.size != null">• [[dogData.animal.size]]</span>
+            </div>
+
             <p>Get more information at <a v-if="dogData.animal.url != null" :href="dogData.animal.url">Petfinder</a></p>
         </div>
 
@@ -58,41 +60,41 @@
             <div class="dog-info">
 
                 <div class="dog-info-header">
-                    <h3>More info</h3>
-                    <ul v-for="tag in dogData.animal.tags" div="tag-container">
-                        <li>[[ tag ]]</li>
-                    </ul>
-                </div>
+                    <h3>About</h3>
+                    <div class="tag-container">
+                        <span v-for="tag in dogData.animal.tags">• [[ tag ]]</span>
+                    </div>
+            
 
                 <div class="dog-info-main">
-                    <div>
+                    <div class="status-div">
                         <h4>Adoption Status</h4>
                         <p>[[dogData.animal.status]]</p>
                     </div>
 
-                    <div>
+                    <div class="trained-div">
                         <h4 v-if="dogData.animal.attributes.house_trained != null">House Trained</h4>
                         <p v-if="dogData.animal.attributes.house_trained === true">Yes</p>
                         <p v-if="dogData.animal.attributes.house_trained === false">No</p>
                     </div>
 
-                    <div>
+                    <div v-if="dogData.animal.environment.cats === false || dogData.animal.environment.children === false || dogData.animal.environment.dogs === false" class="home-div">
                         <h4>Prefers a home without:</h4>
                         <p v-if="dogData.animal.environment.children === false">Children</p>
                         <p v-if="dogData.animal.environment.dogs === false">Dogs</p>
                         <p v-if="dogData.animal.environment.cats === false">Cats</p>
                     </div>
 
-                    <div>
+                    <div class="health-div">
                         <h4>Health</h4>
-                        <ul>
-                        <li v-if="dogData.animal.attributes.declawed === true">Declawed</li>
-                        <li v-if="dogData.animal.attributes.shots_current === true">Shots current</li>
-                        <li v-if="dogData.animal.attributes.shots_current === false">Shots not current</li>
-                        <li v-if="dogData.animal.attributes.spayed_neutered === true">Spayed/Neutered</li>
-                        <li v-if="dogData.animal.attributes.shots_current === false">Not spayed/neutered</li>
-                        <li v-if="dogData.animal.attributes.special_needs === true">Special needs</li>
-                        </ul>
+                        <div class="health-tags-container">
+                            <span v-if="dogData.animal.attributes.declawed === true">• Declawed</span>
+                            <span v-if="dogData.animal.attributes.shots_current === true">• Shots current</span>
+                            <span v-if="dogData.animal.attributes.shots_current === false">• Shots not current</span>
+                            <span v-if="dogData.animal.attributes.spayed_neutered === true">• Spayed/Neutered</span>
+                            <span v-if="dogData.animal.attributes.shots_current === false">• Not spayed/neutered</span>
+                            <span v-if="dogData.animal.attributes.special_needs === true">• Special needs</span>
+                        </div>
                     </div>
                 </div>
             </div>

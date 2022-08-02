@@ -1,6 +1,7 @@
+from xml.etree.ElementTree import Comment
 from rest_framework import serializers
 
-from posts.models import Post, Subject
+from posts.models import Post, Subject, Comment
 from users.models import CustomUser
 from adoption.models import Breed, Activity
 
@@ -13,6 +14,11 @@ class NestedPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post 
         fields = ('title',)
+
+class NestedCommentSerialzer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = ('comment',)
 
 class NestedBreedSerializer(serializers.ModelSerializer):
     class Meta:
@@ -35,6 +41,12 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = ('title', 'id', 'subject_detail', 'created', 'previewImage', 'body', 'previewText')
+
+class CommentSerializer(serializers.ModelSerializer):
+    post_detail = NestedPostSerializer(many=True, source="post", read_only=True)
+    class Meta:
+        model = Comment
+        fields = ('comment', 'created', 'post_detail')
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:

@@ -1,6 +1,4 @@
-main {
-    margin-top: 2em;
-}
+
 
 .adopt-header {
     color:rgb(240, 239, 221);
@@ -80,6 +78,14 @@ main {
     margin: 0em 1em 1em 1em;
 }
 
+.activity-container {
+    margin-top: 1em;
+}
+
+select {
+    margin-bottom: 1em;
+}
+
 .card-header {
     height: 5em;
     padding: .5em;
@@ -130,7 +136,7 @@ main {
 
 /* DOG DETAIL PAGE SPECIFIC */
 
-.detail-img-container {
+/* .detail-img-container {
     margin: 0em auto 0em auto;
     animation-delay: 1sec;
     width: fit-content;
@@ -139,24 +145,76 @@ main {
     animation: travel 20s ease-in-out infinite;
     display: flex;
     flex-flow: row nowrap;
-}
+} */
 
-@keyframes travel {
+/* @keyframes travel {
     0%, 100% {
        transform: translate3d(0,0,0);
      }
     50% {
        transform: translate3d(-100%,0,0);
      }
-  }
+  } */
 
-.detail-img-container img {
+/* .detail-img-container img {
     object-fit: scale-down;
     width: 100%;
     margin: 0em 1em 0em 0em;
+} */
+
+.blog-header-dog {
+    background-color: #2d2d2b;
+    padding: .5em;
+    font-size: .75em;
+    margin-top: 1em;
+    text-align: center;
+}
+
+.blog-header-dog p {
+    line-height: .5em;
+}
+
+.blog-header-dog h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.blog-header-dog a {
+    color: rgb(153, 202, 208);
+}
+
+.dog-tags {
+    margin-top: 2em;
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 1.25em;
+    justify-content: space-evenly;
+}
+
+.tag-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.tag-container span {
+    width: 50%;
+}
+
+.dog-main-container {
+    background-color: #2d2d2b;
+    padding: .5em 1em 1em 1em;
+    margin-top: 2em;
+}
+
+.tag-container, .status-div, .home-div, .trained-div {
+    margin-bottom: 1em;
 }
 
 @media (min-width: 750px) {
+
+    main {
+        margin-top: 2em;
+    }
 
     /* .header-img-container {
         display: flex;
@@ -167,9 +225,9 @@ main {
         /* color:#2e2f31; */
     /* }  */
 
-    #adopt {
+    /* #adopt {
         margin-top: 2em;
-    }
+    } */
 
     .adopt-img {
         display: contents;
