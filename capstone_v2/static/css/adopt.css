@@ -19,9 +19,9 @@
     display: none;
 } */
 
-.adopt-container {
+/* .adopt-container {
     color:rgb(240, 239, 221);
-}
+} */
 
 .dog-card-container h3 {
     color: #212120;
@@ -37,7 +37,7 @@
 }
 
 .search-container {
-    background-color: #2d2d2b;
+    background-color: rgba(216, 223, 227, 0.51);
     padding: 1em;
 }
 
@@ -118,6 +118,12 @@ select {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
+.dog-card-female a, .dog-card-male a {
+    text-decoration: none;
+    color: #212120;
+    text-align: center;
+}
+
 .img-container {
     display: flex;
     justify-content: space-around; 
@@ -194,6 +200,7 @@ select {
 .tag-container {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-between;
 }
 
 .tag-container span {
@@ -201,16 +208,50 @@ select {
 }
 
 .dog-main-container {
-    background-color: #2d2d2b;
-    padding: .5em 1em 1em 1em;
+    padding: 0em;
     margin-top: 2em;
+    font-size: .75em;
+}
+
+.dog-main-container h4 {
+    font-size: 1.25em;
 }
 
 .tag-container, .status-div, .home-div, .trained-div {
     margin-bottom: 1em;
 }
 
-@media (min-width: 750px) {
+.health-div {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.health-tags-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.health-tags-container span {
+    width: 50%;
+}
+
+.dog-info-header {
+    background-color: #2d2d2b;
+    padding: 1em;
+}
+.shelter-info {
+    margin-top: 2em;
+    background-color: #2d2d2b;
+    padding: 1em;
+    text-align: center;
+}
+
+@media (min-width: 700px) {
+
+    .adopt-container {
+        margin-top: 2em;
+        min-height: 100vh;
+    }
 
     main {
         margin-top: 2em;
@@ -229,6 +270,9 @@ select {
         margin-top: 2em;
     } */
 
+    .main-container {
+        margin: 0em 3em 0em 3em;
+    }
     .adopt-img {
         display: contents;
         width: 100%;
@@ -261,6 +305,9 @@ select {
         width: 100%;
     }
 
+    #carousel-example-generic {
+        margin: 2em 0em 0em 0em
+    }
 }
 
 @media (min-width: 1000px) {
@@ -283,6 +330,7 @@ select {
 
     .all-dog-cards-container {
         justify-content: space-around;
+        padding: 0em 1em 0em 1em
     }
     .dog-card-container {
         width: 33.3%;

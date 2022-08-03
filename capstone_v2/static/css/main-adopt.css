@@ -27,7 +27,7 @@ header {
     flex-flow: column nowrap;
     padding: 0em;
     width: 100%;
-    background-color: rgba(244, 241, 240, 0);
+    background-color: rgb(244, 241, 240);
 }
 
 .main {
@@ -198,10 +198,10 @@ details {
 
 @media (min-width: 700px) {
 
-    header.scrolled {
+    /* header.scrolled {
         background-color: rgb(244, 241, 240);
         transition: background-color 200ms linear;
-    }
+    } */
 
     /* header.scrolled .nav a {
         color: rgba(216, 223, 227, 0.51)
@@ -230,10 +230,10 @@ details {
         transition: all ease-in-out 500ms;
     }
 
-    header.scrolled .nav a:hover {
+    /* header.scrolled .nav a:hover {
         color: rgb(131, 132, 151);
         transition: all ease-in-out 500ms;
-    }
+    } */
 
     .mobile-nav {
         display: none;

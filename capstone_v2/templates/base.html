@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dog Adventure Blog</title>
+
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,8 +74,18 @@
         <footer>
             <h3>On Floof &copy;</h3>
         </footer>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <script src="{% static 'javascript/app.js' %}"></script>
+        <script>
+            $(function () {
+                $(document).scroll(function () {
+                  var $navs = $("header");
+                  $navs.toggleClass('scrolled', $(this).scrollTop() > $navs.height());
+                });
+              });
+        </script>
+   
     </body>
 </html>

@@ -103,6 +103,9 @@ const dogFinder = new Vue ({
                 // breed: "husky"
             }).then(response => {
                 this.dogData = response.data
+                for (let dog of this.dogData.animals) {
+                    dog.distance = Math.floor(dog.distance)
+                }
             })
        },
 
@@ -117,7 +120,8 @@ const dogFinder = new Vue ({
 
        sortBreedsByActivity: function() {
 
-            activityBreeds = []
+            this.activityBreeds = []
+            console.log('inside sortbreedsby activity')
             for (let activity_object of this.breedList) {
                 if (activity_object.activity === this.activity) {
                     for (let breed of activity_object.breed_detail) {
