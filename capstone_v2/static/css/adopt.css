@@ -23,6 +23,10 @@
     color:rgb(240, 239, 221);
 } */
 
+.adopt-container h2 {
+
+}
+
 .dog-card-container h3 {
     color: #212120;
 }
@@ -36,10 +40,6 @@
     flex-flow: column nowrap;
 }
 
-.search-container {
-    background-color: rgba(255, 255, 255, 0.853);
-    padding: 1em;
-}
 
 #location {
     max-width: 100%;
@@ -170,14 +170,14 @@ select {
 
 .blog-header-dog {
     background-color: rgba(255, 255, 255, 0.853);
-    padding: .5em;
+    padding: 1em 1em 2em 1em;
     font-size: .75em;
     margin-top: 2em;
     text-align: center;
 }
 
 .blog-header-dog p {
-    line-height: .75em;
+    line-height: 1.15em;
 }
 
 .blog-header-dog h2 {
@@ -218,8 +218,12 @@ select {
     font-size: 1.25em;
 }
 
-.tag-container, .status-div, .home-div, .trained-div {
+.status-div, .home-div, .trained-div {
     margin-bottom: 1em;
+}
+
+.tag-container {
+    margin-bottom: 2em;
 }
 
 .health-div {
@@ -239,34 +243,59 @@ select {
 
 .dog-info-header {
     background-color: rgba(255, 255, 255, 0.853);
-    padding: 1em;
+    padding: 1em 1em 2em 1em;
     text-align: center;
 }
 .shelter-info {
     margin-top: 2em;
-    background-color: rgba(255, 255, 255, 0.853);
     padding: 1em;
+    background-color: #1b5e52d1;
+    color: rgb(244, 241, 240);
     text-align: center;
 }
+   
 
 #carousel-example-generic {
     margin: 0em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2)
 }
 
-.dog-info-header h3, .shelter-info h3 {
+.shelter-info h3 {
     font-size: 2em;
-    color:#2a8c7ad1;
+    color: rgba(255, 255, 255, 0.853);
+}
+
+.dog-info-header h3 {
+    font-size: 2em;
+    color: #51b7a4d1;
+}
+
+.search-container h2 {
+    color: #398274d1;
+}
+
+
+@media (min-width: 450px) {
+
+    .search-container {
+        margin: 0em 2em 0em 2em;
+    }
+    
 }
 
 @media (min-width: 700px) {
+
+    .search-container {
+        margin: 2em 4em 0em 4em;
+    }
+    
 
     #carousel-example-generic {
         box-shadow:none;
     }
 
     .adopt-container {
-        margin-top: 2em;
+        /* margin-top: 2em; */
         min-height: 100vh;
     }
 
@@ -291,9 +320,11 @@ select {
         margin: 0em 3em 0em 3em;
     }
 
-    .search-container {
+    /* .search-container {
         margin: 0em 2em 1em 2em;
-    }
+    } */
+
+    
     
     .adopt-img {
         display: contents;
@@ -338,7 +369,31 @@ select {
     }
 
     .tag-container span, .health-tags-container span{
-        width: 25%;
+        width: 33.33%;
+    }
+}
+
+@media (min-width: 900px) {
+
+    /* #carousel-example-generic {
+        margin-top: 2em;
+        margin-bottom: 1em;
+    } */
+
+    .dog-info {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .shelter-info {
+        width: 35%;
+        height: 100%;
+        margin-top: 0em;
+    }
+
+    .dog-info-header {
+        width: 65%;
+        margin-right: 2em;
     }
 }
 
@@ -371,6 +426,22 @@ select {
 }
 
 @media (min-width: 1250px) {
+
+    #dog-list {
+        width: 75%;
+        margin: 0em;
+    }
+
+    .search-container {
+        margin: 2em 0em 0em 0em;
+    }
+
+    #carousel-example-generic {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1200px;
+    }
+
     .adopt-container {
         display: flex;
         flex-flow: row nowrap;

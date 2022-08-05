@@ -28,7 +28,6 @@ header {
     padding: 0em;
     width: 100%;
     background-color: rgb(244, 241, 240);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .main {
@@ -90,7 +89,7 @@ h1 a{
 }
 
 footer h3 {
-    color:#1b5e52d1;
+    color:#2a8c7ad1;
     font-family: 'Fredoka One', cursive;
     font-size: 1.5em;
 }
@@ -107,6 +106,57 @@ footer h3 {
 .blog-header {
     width: 100%;
     padding: 1em;
+}
+
+.activity-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+#breeds-list-container {
+    margin-top: 1em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.location {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 1em 0em 1em 0em
+}
+
+#location {
+    width: 100%;
+}
+
+.top-search-div {
+    background-color: rgba(255, 255, 255, 0.853);
+    padding: 1em;
+}
+
+.bottom-search-div {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-top: 2em;
+    background-color: rgba(255, 255, 255, 0.853);
+    padding: 1em;
+}
+
+button {
+    border: solid #3d4b49;
+    background-color: rgb(244, 241, 240);;
+    box-shadow: none;
+    margin: 1em;
+    padding: .25em;
+}
+
+select {
+    width: 100%;
 }
 
 .created {
@@ -204,6 +254,7 @@ details {
     display: none;
 } */
 
+
 @media (min-width: 700px) {
 
     /* header.scrolled {
@@ -261,6 +312,7 @@ details {
         padding: 0em;
         height: 2em;
         z-index: 1;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
     }
 
     .title {

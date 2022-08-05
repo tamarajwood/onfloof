@@ -19,26 +19,32 @@
     </div> -->
 
     <div class="adopt-container">
+
         <div class="search-container">
-            <h2>Dog Search</h2>
-            <div class="activity-container">
-                <label for="activity">Choose an activity:&nbsp;</label>
 
-                <select id="activity" v-model="activity" @change="sortBreedsByActivity">
-                    <option value="Hiking">Hiking</option>
-                    <option value="Running">Running</option>
-                    <option value="Hunting">Hunting</option>
-                    <option value="Skiing">Skiing</option>
-                </select>
+            <div class="top-search-div">
+
+                <h2>Dog Search</h2>
+
+                <div class="activity-container">
+                    <label for="activity">Choose an activity:&nbsp;</label>
+
+                    <select id="activity" v-model="activity" @change="sortBreedsByActivity">
+                        <option value="Hiking">Hiking</option>
+                        <option value="Running">Running</option>
+                        <option value="Hunting">Hunting</option>
+                        <option value="Skiing">Skiing</option>
+                    </select>
+                </div>
+
+                <div id="breeds-list-container" v-if="activity !== ''">
+                    <h2>Recommended Breeds</h2>
+
+                    <select v-model="userBreeds" multiple>
+                        <option v-for="breed_object in activityBreeds" :value="breed_object.breed">[[ breed_object.breed ]]</option>
+                    </select>
+                </div>
             </div>
-
-            <div id="breeds-list-container" v-if="activity !== ''">
-                <br><h2>Recommended Breeds</h2><br>
-
-                <select v-model="userBreeds" multiple>
-                    <option v-for="breed_object in activityBreeds" :value="breed_object.breed">[[ breed_object.breed ]]</option>
-                </select>
-
                 <!-- <div v-for="breeds in breedList">
                     <div v-for="sport in breeds.activites">
 
@@ -51,12 +57,17 @@
                     </div>
                 </div> -->
 
-                
-                <br><label for="location">Location:&nbsp;</label>
-                <input type='text' value='location' v-model="location" id='location' placeholder="city, state or zip" @keyup.enter="getNewDogData">
-                <br><br><button @click="getNewDogData">Search</button>
+                <div class = 'bottom-search-div'  v-if="activity !== ''">
+
+                    <div class='location'>
+                        <label for="location">Location:&nbsp;</label>
+                        <input type='text' value='location' v-model="location" id='location' placeholder="city, state or zip" @keyup.enter="getNewDogData">
+                    </div>
+
+                    <button @click="getNewDogData">Search</button>
+                </div>
             </div>
-        </div>
+        
 
         <div id="dog-list" v-if="Object.keys(dogData).length">
 
