@@ -84,8 +84,13 @@ h1 a{
     text-shadow: -.035em 0 #212120, 0 .035em #212120, .035em 0 #212120, 0 -.035em #212120;
 }
 
+h1 a:hover {
+    color:#43c2aad1;
+    transition: all ease-in-out 300ms;
+}
+
 .main-container h2 {
-    color:#51b7a4d1;
+    color:#419384d6;
 }
 
 footer h3 {
@@ -93,9 +98,6 @@ footer h3 {
     font-family: 'Fredoka One', cursive;
     font-size: 1.5em;
 }
-
-
-/* this is NOT WORKING, WHY??? */
 
 .home-container {
     background-color: rgb(244, 241, 240);
@@ -115,7 +117,57 @@ footer h3 {
 }
 
 .main-container {
-    background-color: rgba(216, 223, 227, 0.51);
+    background-color: rgba(255, 255, 255, 0.853);
+}
+
+.comment-section {
+    display:flex;
+    flex-flow: column nowrap;
+}
+.comments-tab-container {
+    background-color: #83a29d;
+    padding: 1em;
+    min-height: 3em;
+
+}
+
+.comment-created {
+    font-size: .75em;
+    color: #30302e;
+}
+
+.comments-tab {
+    margin-right: 2em;
+    margin-bottom: -.1em;
+    background-color: #83a29d;
+    border: none;
+    border-radius: 1em 1em 0em 0em;
+    padding: .5em;
+    box-shadow: none;
+    align-self:flex-end;
+}
+
+.comments-submit {
+    border: solid #3d4b49;
+    background-color: rgb(244, 241, 240);;
+    box-shadow: none;
+}
+.comments-container {
+    border-bottom: dotted .25em rgb(244, 241, 240);
+}
+
+.new-comment {
+    margin-top: 2em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.new-comment textarea {
+    width: 20em;
+    max-width: 100%;
+    height: 6em;
+    margin-bottom: 1em;
 }
 
 .post-body {
@@ -125,17 +177,17 @@ footer h3 {
 }
 
 summary {
-    background-color: #212120;
+    background-color: rgb(244, 241, 240);
+    /* border-top:#ffffffb7 solid .25em; */
     padding: .5em;
 }
 
 summary::marker {
     color:#51b7a4d1;
-    display: none;
 }
 
 details {
-    color: rgba(216, 223, 227, 0.708);
+    color: #212120;
     font-size: 1.25em;
     font-family: 'Inter', sans-serif;
 }
@@ -152,7 +204,7 @@ details {
 }
 
 .mobile-nav div {
-    padding: .65em 0em 0em 1em;
+    padding: .5em 0em .5em 1em;
 }
 
 .mobile-nav a {
@@ -200,6 +252,7 @@ details {
 
     header.scrolled {
         background-color: rgb(244, 241, 240);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
         transition: background-color 200ms linear;
     }
 
@@ -226,13 +279,13 @@ details {
     }
     
     .nav a:hover {
-        color: rgb(250, 250, 250);
-        transition: all ease-in-out 500ms;
+        color:rgb(250, 250, 250);
+        transition: all ease-in-out 300ms;
     }
 
     header.scrolled .nav a:hover {
-        color: rgb(131, 132, 151);
-        transition: all ease-in-out 500ms;
+        color: #43c2aad1;
+        transition: all ease-in-out 300ms;
     }
 
     .mobile-nav {
@@ -340,11 +393,19 @@ details {
         display: contents;
     } */
 
+    .comments-tab-container {
+        padding: 1em 2em 1em 2em;
+    }
+
 }
 
 @media (min-width: 900px) {
     .post-body {
         padding: 2em 3em 3em 3em;
+    }
+
+    .comments-tab-container {
+        padding: 1em 3em 1em 3em;
     }
 
 }
@@ -378,7 +439,7 @@ details {
    .subject-nav div:hover {
     border: solid rgba(245, 233, 218, 0.818) .105em;
     background-color: rgba(223, 178, 124, 0.581);
-    transition: all ease-in-out 500ms;
+    transition: all ease-in-out 300ms;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
    }
 

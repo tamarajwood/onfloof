@@ -12,13 +12,40 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/adopt.css">
-    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/main-adopt.css">
     <link rel="stylesheet" href="../static/css/carousel.css">
 
 </head>
     <body>
         <header>
             <h1 class="title"><a href="{% url 'home' %}">On <br>Floof</a></h1>
+            <details class="mobile-nav">
+                <summary>Menu</summary>
+                <div>
+                    <a href="{% url 'home' %}">Blog</a>
+                </div>
+                <div class="subject-nav-mobile">
+                    <div>
+                        <a href="{% url 'hike' %}">Hiking</a>
+                    </div>
+                    <div>
+                        <a href="{% url 'bike' %}">Cycling</a>
+                    </div>
+                    <div>
+                        <a href="{% url 'mush' %}">Mushing</a>
+                    </div>
+                </div>
+                <div>
+                    <a href="{% url 'adopt' %}">Adopt</a>
+                </div>
+                <div>
+                    <a href="{% url 'about' %}">About</a>
+                </div>
+                <div>
+                    <a href="{% url 'contact' %}">Contact</a> 
+                </div>   
+            </details>
+
             <div class="nav">
                 <div>
                     <a href="{% url 'home' %}">Blog</a>
@@ -52,6 +79,6 @@
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
         <script src="/../static/javascript/dogDetail.js/"></script>
-        <script src="/../static/javascript/carousel.js/"></script>
+        <script src="/../static/javascript/carousal.js/"></script>
     </body>
 </html>

@@ -37,7 +37,7 @@
 }
 
 .search-container {
-    background-color: rgba(216, 223, 227, 0.51);
+    background-color: rgba(255, 255, 255, 0.853);
     padding: 1em;
 }
 
@@ -103,7 +103,7 @@ select {
 .dog-card-male {
     background-color: rgb(153, 202, 208);
     border-radius: 3em .5em 3em .5em;
-    outline: solid white .1em;
+    outline: solid rgb(250, 250, 250) .1em;
     margin: 0em;
     padding: 0em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
@@ -112,7 +112,7 @@ select {
 .dog-card-female {
     background-color: rgb(211, 151, 193);
     border-radius: 3em .5em 3em .5em;
-    outline: solid white .1em;
+    outline: solid rgb(250, 250, 250) .1em;
     margin: 0em;
     padding: 0em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
@@ -169,24 +169,24 @@ select {
 } */
 
 .blog-header-dog {
-    background-color: #2d2d2b;
+    background-color: rgba(255, 255, 255, 0.853);
     padding: .5em;
     font-size: .75em;
-    margin-top: 1em;
+    margin-top: 2em;
     text-align: center;
 }
 
 .blog-header-dog p {
-    line-height: .5em;
+    line-height: .75em;
 }
 
 .blog-header-dog h2 {
-    font-size: 1.5em;
+    font-size: 3em;
     margin-bottom: 1em;
 }
 
 .blog-header-dog a {
-    color: rgb(153, 202, 208);
+    color: rgb(117, 151, 156);
 }
 
 .dog-tags {
@@ -200,8 +200,9 @@ select {
 .tag-container {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
 }
+
+
 
 .tag-container span {
     width: 50%;
@@ -229,6 +230,7 @@ select {
 .health-tags-container {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-around;
 }
 
 .health-tags-container span {
@@ -236,17 +238,32 @@ select {
 }
 
 .dog-info-header {
-    background-color: #2d2d2b;
+    background-color: rgba(255, 255, 255, 0.853);
     padding: 1em;
+    text-align: center;
 }
 .shelter-info {
     margin-top: 2em;
-    background-color: #2d2d2b;
+    background-color: rgba(255, 255, 255, 0.853);
     padding: 1em;
     text-align: center;
 }
 
+#carousel-example-generic {
+    margin: 0em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2)
+}
+
+.dog-info-header h3, .shelter-info h3 {
+    font-size: 2em;
+    color:#2a8c7ad1;
+}
+
 @media (min-width: 700px) {
+
+    #carousel-example-generic {
+        box-shadow:none;
+    }
 
     .adopt-container {
         margin-top: 2em;
@@ -273,6 +290,11 @@ select {
     .main-container {
         margin: 0em 3em 0em 3em;
     }
+
+    .search-container {
+        margin: 0em 2em 1em 2em;
+    }
+    
     .adopt-img {
         display: contents;
         width: 100%;
@@ -301,12 +323,22 @@ select {
         height: 20em;
     }
 
+    .dog-card-female:hover, .dog-card-male:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+        outline: solid white .1em;
+        transition: all ease-in-out 300ms;
+    }
+
     .img-container {
         width: 100%;
     }
 
     #carousel-example-generic {
-        margin: 2em 0em 0em 0em
+        margin: 0em;
+    }
+
+    .tag-container span, .health-tags-container span{
+        width: 25%;
     }
 }
 

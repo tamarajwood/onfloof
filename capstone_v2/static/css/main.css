@@ -10,10 +10,11 @@ body {
     flex-flow: column nowrap;
     padding: 0em;
     margin: 0em;
-    font-size: 1.5em;
+    font-size: 1.25em;
     line-height: 1.25em;
     font-family: 'Inter', sans-serif;
-    background-color: #212120;
+    color: #212120;
+    background-color: rgb(244, 241, 240);
     /* background-color: rgba(45, 37, 39, 0.799) ; */
 }
 
@@ -30,12 +31,16 @@ header {
     margin: 0em;
 }
 
+.main-container {
+    margin-top: 1em;
+}
+
 .main-image {
     display: none;
 }
 
 footer {
-    background-color: #212120;
+    background-color: rgb(244, 241, 240);
     padding: 2em;
     margin: 0em;
 }
@@ -56,8 +61,13 @@ h1 a{
     text-shadow: -.035em 0 #212120, 0 .035em #212120, .035em 0 #212120, 0 -.035em #212120;
 }
 
+h1 a:hover {
+    color:#43c2aad1;
+    transition: all ease-in-out 300ms;
+}
+
 .main-container h2 {
-    color:#51b7a4d1;
+    color:#1f6357d1;
 }
 
 footer h3 {
@@ -67,7 +77,7 @@ footer h3 {
 }
 
 summary {
-    background-color: #212120;
+    background-color: rgb(244, 241, 240);
     padding: .5em;
 }
 
@@ -77,7 +87,7 @@ summary::marker {
 }
 
 details {
-    color: rgba(216, 223, 227, 0.708);
+    color: #212120;
     font-size: 1.25em;
     font-family: 'Inter', sans-serif;
 }
@@ -94,11 +104,11 @@ details {
 }
 
 .mobile-nav div {
-    padding: .65em 0em 0em 1em;
+    padding: .5em 0em .5em 1em;
 }
 
 .mobile-nav a {
-    color: rgba(216, 223, 227, 0.51);
+    color: rgb(54, 57, 58);
     font-size: .75em;
     text-decoration: none;
 }
@@ -109,8 +119,7 @@ details {
 }
 
 .home-container {
-    background-color: #212120;
-    color: rgb(240, 239, 221);
+    background-color: rgb(244, 241, 240);
 }
 
 .blog-header {
@@ -122,12 +131,12 @@ details {
 .post-preview {
     display: flex;
     flex-flow: column nowrap;
-    background-color: #2d2d2b;
+    background-color: rgba(255, 255, 255, 0.853);
     padding: 1em;
     margin: 1em 0em;
+    color: #212120;
     width: 100%;
     height:fit-content;
-    color: rgb(240, 239, 221);
     text-decoration: none;
 }
 
@@ -136,16 +145,45 @@ details {
     max-width: 100%;
 }
 
+.created {
+    text-align: end;
+    font-size: .75em;
+    color: #30302e;
+}
+
 .preview-text-container {
     display: flex;
     flex-flow: column nowrap;
+    padding: 0em 1em 0em 1em;
 }
 
 .preview-text {
     display: none;
 }
 
+.preview-text-container h3 {
+    color:#2a8c7ad1;
+}
+
+@media (min-width: 450px) {
+    .main-container {
+        padding: 0em 2em 0em 2em;
+    }
+
+    .mobile-nav {
+        padding: 0em 1em 0em 1em;
+    }
+}
+
 @media (min-width: 700px) {
+
+    .main-container {
+        margin-top: 2em;
+    }
+
+    .preview-text-container h3 {
+        font-size: 1.5em;
+    }
 
     .nav {
         display: flex;
@@ -155,12 +193,9 @@ details {
     }
     
     header.scrolled {
-        background-color: #212120;
+        background-color: rgb(244, 241, 240);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
         transition: background-color 200ms linear;
-    }
-
-    header.scrolled .nav a {
-        color: rgba(216, 223, 227, 0.51)
     }
     
     .mobile-nav {
@@ -179,7 +214,8 @@ details {
     
     .nav a:hover {
         color: rgb(250, 250, 250);
-        transition: all ease-in-out 500ms;
+        text-shadow: .035em 0 #21212045, 0 .035em #2121203b, .035em 0 #2121202f, 0 .035em #2121203e;
+        transition: all ease-in-out 300ms;
     }
     /* this is NOT WORKING, WHY??? */
 
@@ -207,6 +243,7 @@ details {
         height: auto;
         width: 100vw;
         max-width: 100%;
+        /* max-height: 80vh; */
         padding: 0em;
         color:#2e2f31;
     }
@@ -239,10 +276,21 @@ details {
         font-size: 1em;
     }
 
+    .main-container h2 {
+        font-size: 2em;
+    }
+
     .post-preview {
         display: flex;
         flex-flow: row nowrap;
         width: 100%;
+        margin-top: 2em;
+    }
+
+    .post-preview:hover {
+        outline: solid .25em white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+        transition: ease-in-out 300ms;
     }
 
     .post-preview img {
@@ -258,20 +306,34 @@ details {
         display: contents;
     }
 
+    .preview-text-container {
+        padding: 1em;
+    }
+
+}
+
+@media (min-width: 1000px) {
+    .preview-text-container {
+        padding: 2em;
+        justify-content: space-around;
+    }
 }
 
 @media (min-width: 1200px) {
 
     .image-message {
         position: absolute;
-        color:#3c3633d6;
-        top: 5em;
-        left: 5em;
+        color:#3e6251;
+        top: 6em;
+        left: 9em;
         text-align: center;
     }
 
     .image-message h2 {
         display: contents;
+        font-size: 2em;
+        line-height: 1.15em;
+        font-family: 'Abril Fatface', cursive;
     }
 
    .subject-nav {
@@ -291,20 +353,33 @@ details {
    .subject-nav div a:hover {
     /* border: solid rgba(245, 233, 218, 0.818) .105em;
     background-color: rgba(223, 178, 124, 0.581); */
-    transition: all ease-in-out 500ms;
-    color: #1f2224d6;
-    text-decoration-color: #b68642;
+    transition: all ease-in-out 300ms;
+    color: rgb(250, 250, 250);
+    text-decoration-color: #579e7d;
     text-shadow: .035em 0 #21212045, 0 .035em #2121203b, .035em 0 #2121202f, 0 .035em #2121203e;
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2); */
     }
 
    .subject-nav div a {
     color: #33373cd6;
-    text-decoration-color: #655f56d6;
+    /* text-decoration-color: #655f56d6; */
    }
 
    .main-container {
-        margin: 0em auto 0em auto;
+        margin: 2em auto 0em auto;
         width: 70%;
    }
+}
+
+@media (min-width: 1500px) {
+
+    .main-container h2 {
+        font-size: 2.5em;
+    }
+
+
+    .image-message h2 {
+        font-size: 3em;
+        top: 7.5em
+    }
 }

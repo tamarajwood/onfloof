@@ -28,6 +28,7 @@ header {
     padding: 0em;
     width: 100%;
     background-color: rgb(244, 241, 240);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .main {
@@ -89,7 +90,7 @@ h1 a{
 }
 
 footer h3 {
-    color:#2a8c7ad1;
+    color:#1b5e52d1;
     font-family: 'Fredoka One', cursive;
     font-size: 1.5em;
 }
@@ -114,9 +115,9 @@ footer h3 {
     color: #30302e;
 }
 
-.main-container {
+/* .main-container {
     background-color: rgba(216, 223, 227, 0.51);
-}
+} */
 
 .post-body {
     margin: 0em;
@@ -125,20 +126,25 @@ footer h3 {
 }
 
 summary {
-    background-color: #212120;
+    background-color: rgb(244, 241, 240);
+    /* border-top:#ffffffb7 solid .25em; */
     padding: .5em;
 }
 
 summary::marker {
     color:#51b7a4d1;
-    display: none;
 }
 
 details {
-    color: rgba(216, 223, 227, 0.708);
+    color: #212120;
     font-size: 1.25em;
     font-family: 'Inter', sans-serif;
 }
+
+/* details[open] {
+    border-top: #ffffffb7 solid .25em;
+    border-bottom: #ffffffb7 solid .25em;
+} */
 
 .nav {
     display: none;
@@ -146,13 +152,15 @@ details {
 
 .mobile-nav {
     display: flex;
+    background-color: rgb(244, 241, 240);
     flex-flow: column nowrap;
     width: 100%;
     padding: 0em;
+    margin-bottom: .75em;
 }
 
 .mobile-nav div {
-    padding: .65em 0em 0em 1em;
+    padding: .5em 0em .5em 1em;
 }
 
 .mobile-nav a {
@@ -226,13 +234,19 @@ details {
     }
     
     .nav a:hover {
-        color: rgb(250, 250, 250);
-        transition: all ease-in-out 500ms;
+        color: #43c2aad1;
+        transition: all ease-in-out 300ms;
     }
+
+    h1 a:hover {
+        color:#43c2aad1;
+        transition: all ease-in-out 300ms;
+    }
+    
 
     /* header.scrolled .nav a:hover {
         color: rgb(131, 132, 151);
-        transition: all ease-in-out 500ms;
+        transition: all ease-in-out 300ms;
     } */
 
     .mobile-nav {
@@ -378,7 +392,7 @@ details {
    .subject-nav div:hover {
     border: solid rgba(245, 233, 218, 0.818) .105em;
     background-color: rgba(223, 178, 124, 0.581);
-    transition: all ease-in-out 500ms;
+    transition: all ease-in-out 300ms;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
    }
 

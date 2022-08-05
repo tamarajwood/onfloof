@@ -31,13 +31,26 @@
             <p>[[ currentPost.body ]]</p>
         </div>
         
-        <!-- <div class="comment-section">
-            <button @click="commentMode = true">Comment</button>
-            <div v-if="commentMode = true">
-                <input type="text" value="comment" v-model="comment">
-                <button @click="postComment">Submit</button>
+        <div class="comment-section">
+
+            <button @click="commentMode = !commentMode" class="comments-tab">Comments</button>
+
+            <div class="comments-tab-container">
+
+                <div v-if="commentMode === true">
+
+                    <div class="comments-container" v-for="comment in currentPost.comment_detail">
+                        <p class="comment-created"><em>Created: [[ comment.created ]]</em></p>
+                        <p>[[ comment.comment ]]</p>
+                    </div>
+
+                    <div class="new-comment">
+                        <textarea type="text" v-model="comment.comment" placeholder="Write a comment here..."></textarea>
+                        <button @click="postComment" class="comments-submit">Submit</button>
+                    </div>
+                </div>
             </div>
-        </div> -->
+        </div>
     </div>
 </div>
     

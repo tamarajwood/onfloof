@@ -47,7 +47,7 @@
             </p>
 
             <div class="dog-tags">
-            <span v-if="dogData.animal.age != null">[[dogData.animal.age]]</span>
+            <span v-if="dogData.animal.age != null">• [[dogData.animal.age]]</span>
             <span v-if="dogData.animal.gender != null">• [[dogData.animal.gender]]</span>
             <span v-if="dogData.animal.size != null">• [[dogData.animal.size]]</span>
             </div>
@@ -60,9 +60,9 @@
             <div class="dog-info">
 
                 <div class="dog-info-header">
-                    <h4>About</h4>
+                    <h3>About</h3>
                     <div class="tag-container">
-                        <span v-for="tag in dogData.animal.tags">• [[ tag ]]</span>
+                        <span v-for="tag in dogData.animal.tags">[[ tag ]]</span>
                     </div>
             
 
@@ -100,7 +100,7 @@
             </div>
 
             <div class="shelter-info" v-if="dogData.animal.contact.email != null">
-                <div class="shelter-info-header"><h2>Contact</h2></div>
+                <div class="shelter-info-header"><h3>Contact</h3></div>
                 <div class="shelter-info-main"><p>[[dogData.animal.contact.email]]</p></div>
             </div>
         </div>

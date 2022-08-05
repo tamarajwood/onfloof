@@ -8,6 +8,12 @@ const vm = new Vue({
         bikeList: [],
         mushList: [],
         currentPost: {},
+
+        commentMode: false,
+        comment: {
+            comment: '',
+            post: []
+        },
     },
     methods: {
 
@@ -36,6 +42,12 @@ const vm = new Vue({
                 this.postsList = response.data
                 this.loadSubjects()
                 this.loadCurrentPost()
+                for (let post of this.postsList) {
+                    post.created = post.created.substring(0, 10)
+                    for (let comment of post.comment_detail) {
+                        comment.created = comment.created.substring(0, 10)
+                    }
+                }
             })
 
 
@@ -51,6 +63,38 @@ const vm = new Vue({
                     // this.currentPost.push(post)
                 }
             }
+        },
+
+        // currentDate: function() {
+        //     let currentDate = new Date()
+        //     let currentDay = currentDate.getDate()
+        //     let currentMonth = currentDate.getMonth() + 1
+        //     let currentYear = currentDate.getFullYear()
+        //     let created = `${currentDay}/${currentMonth}/${currentYear}`
+        //     return created
+        // },
+
+        postComment: function() {
+
+            this.comment.post.push(this.currentPost.id)
+            // console.log(this.comment)
+            console.log(this.currentPost.id)
+            console.log(this.comment)
+
+            axios({
+                method: 'post',
+                url: '/api/v1/comments/',
+                headers: {
+                    'X-CSRFToken': this.csrfToken
+                },
+                data: this.comment
+            }).then(response => {
+                this.loadPosts()
+                this.comment = {
+                    comment: '',
+                    post: [this.currentPost.id]
+                }
+            })
         }
 
     },

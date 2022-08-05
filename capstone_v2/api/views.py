@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 from posts.models import Post, Subject, Comment
 from adoption.models import Breed, Activity
 from .serializers import BreedSerializer, ActivitySerializer, PostSerializer, SubjectSerializer, UserSerializer, CommentSerializer
-from .permissions import IsAdminUserOrReadOnly, AdminReadOnly
+from .permissions import IsAdminUserOrReadOnly, AdminReadOnly, PostOnly
 
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
@@ -14,7 +14,7 @@ class PostViewSet(viewsets.ModelViewSet):
 class CommentViewSet(viewsets.ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
-    permission_classes = [IsAdminUserOrReadOnly]
+    permission_classes = [PostOnly]
 
 class SubjectViewSet(viewsets.ModelViewSet):
     queryset = Subject.objects.all()

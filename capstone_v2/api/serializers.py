@@ -13,12 +13,12 @@ class NestedSubjectSerializer(serializers.ModelSerializer):
 class NestedPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post 
-        fields = ('title',)
+        fields = ('title', 'id')
 
 class NestedCommentSerialzer(serializers.ModelSerializer):
     class Meta:
         model = Comment
-        fields = ('comment',)
+        fields = ('comment', 'created')
 
 class NestedBreedSerializer(serializers.ModelSerializer):
     class Meta:
@@ -37,16 +37,23 @@ class SubjectSerializer(serializers.ModelSerializer):
         fields = ('subject', 'post_detail')
 
 class PostSerializer(serializers.ModelSerializer):
+    comment_detail = NestedCommentSerialzer(many=True, source='comments', read_only=True)
     subject_detail = NestedSubjectSerializer(many=True, source='subjects', read_only=True)
     class Meta:
         model = Post
-        fields = ('title', 'id', 'subject_detail', 'created', 'previewImage', 'body', 'previewText')
+        fields = ('title', 'id', 'subject_detail', 'created', 'previewImage', 'body', 'comment_detail', 'previewText')
 
 class CommentSerializer(serializers.ModelSerializer):
     post_detail = NestedPostSerializer(many=True, source="post", read_only=True)
     class Meta:
         model = Comment
-        fields = ('comment', 'created', 'post_detail')
+        fields = ('comment', 'created', 'post_detail', 'post')
+    
+    # def to_representation(self, instance):
+    #     data = super().to_representation(instance)
+    #     data['post_detail'] = PostSerializer(
+    #         Post.objects.get(pk=data['post_detail'])).data
+    #     return data
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
